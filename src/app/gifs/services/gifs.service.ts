@@ -18,7 +18,7 @@ export class GifsService {
 
     this._tagsHistory.unshift(tag);
 
-    console.log(this.tagsHistory);
+    console.log(this._tagsHistory);
 
   }
 
