@@ -14,11 +14,28 @@ export class GifsService {
     return [...this._tagsHistory];
   }
 
-  public searchTag(tag: string): void {
+  private organizeHistory(tag: string) {
 
+    tag = tag.toLocaleLowerCase();
+
+    //Eliminar el tag viejo repetido
+    if(this._tagsHistory.includes(tag)) {
+      this._tagsHistory = this._tagsHistory.filter((oldTag) => oldTag !== tag);
+    }
+
+    //Insertarlo de nuevo al principio
     this._tagsHistory.unshift(tag);
 
-    console.log(this._tagsHistory);
+    //Limitarlo a 10 busquedas
+    this._tagsHistory = this.tagsHistory.splice(0,10);
+
+  }
+
+  public searchTag(tag: string): void {
+
+    if(tag.length === 0) return;
+
+    this.organizeHistory(tag);
 
   }
 
