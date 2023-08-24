@@ -35,6 +35,14 @@ export class GifsService {
     //Limitarlo a 10 busquedas
     this._tagsHistory = this.tagsHistory.splice(0,10);
 
+    //Llamar al método para guardar info en el LocalStorage una vez que ha cambiado la información
+    this.saveLocalStorage();
+
+  }
+
+  //Guardar en el almacenamiento del navegador información
+  private saveLocalStorage(): void {
+    localStorage.setItem('history', JSON.stringify(this._tagsHistory))
   }
 
   public searchTag(tag: string): void {
