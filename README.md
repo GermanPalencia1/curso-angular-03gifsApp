@@ -22,7 +22,7 @@ Curso basado en Angular desde cero. Hace un recorrido por extenso para poder ini
   
   - Animaciones mediante css
 
-03B: Image Loader - El objetivo principal es realizar un loading mientras la imagen se carga-
+03B: Image Loader - El objetivo principal es realizar un loading mientras la imagen se carga
 
   - @Inputs
   
